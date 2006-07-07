@@ -1,0 +1,20 @@
+Source: notify-python
+Section: python
+Priority: optional
+Maintainer: Gustavo Franco <stratus@debian.org>
+Uploaders:  Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 5.0.37.2), cdbs (>= 0.4.43), python-all-dev (>= 2.3.5-7), python-support (>= 0.3), pkg-config (>= 0.20-1), libnotify-dev (>= 0.4.0-1), python-gtk2-dev (>= 2.8.6-3)
+Standards-Version: 3.7.2
+
+Package: python-notify
+Architecture: any
+Depends: ${python:Depends}, libnotify1 (>= 0.4.0-1), python-gtk2 (>= 2.8.6-3)
+Provides: ${python:Provides}
+Description: Python bindings for libnotify
+ libnotify sends desktop notifications to a notification daemon, as
+ defined in the Desktop Notifications spec. These notifications can be
+ used to inform the user about an event or display some form of
+ information without getting in the user's way.
+ .
+ python-notify provides just the Python bindings for libnotify.
+
