@@ -1,3 +1,10 @@
+notify-python (0.1.0-2) unstable; urgency=low
+
+  * Fix debian/pyversions changing content from 2.3 to >= 2.3. 
+    (Closes: #384068)
+
+ -- Gustavo Franco <stratus@debian.org>  Tue, 22 Aug 2006 11:47:56 -0300
+
 notify-python (0.1.0-1) unstable; urgency=low
 
   * Initial release (Closes: #366863)  
