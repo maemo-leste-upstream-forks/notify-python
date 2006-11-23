@@ -1,3 +1,9 @@
+notify-python (0.1.0-2) UNRELEASED; urgency=low
+
+  * Added XS-Vcs-Svn field
+
+ -- Piotr Ozarowski <ozarow@gmail.com>  Thu, 23 Nov 2006 14:44:45 +0100
+
 notify-python (0.1.0-1) unstable; urgency=low
 
   * Initial release (Closes: #366863)  
