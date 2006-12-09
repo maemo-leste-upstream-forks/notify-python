@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Gustavo Franco <stratus@debian.org>
 Uploaders:  Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Build-Depends: debhelper (>= 5.0.37.2), cdbs (>= 0.4.43), python-all-dev (>= 2.3.5-7), python-support (>= 0.3), pkg-config (>= 0.20-1), libnotify-dev (>= 0.4.0-1), python-gtk2-dev (>= 2.8.6-3)
+Build-Conflicts: libdbus-1-2
 Standards-Version: 3.7.2
 
 Package: python-notify
