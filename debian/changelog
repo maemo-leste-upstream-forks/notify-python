@@ -6,8 +6,9 @@ notify-python (0.1.0-2) UNRELEASED; urgency=low
   [ Loic Minier ]
   * Misc cleanups.
   * Update URL in copyright.
+  * Set XS and XB-PV instead of debian/pyversions.
 
- -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:19:49 +0200
+ -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:21:04 +0200
 
 notify-python (0.1.0-1) unstable; urgency=low
 
