@@ -1,4 +1,4 @@
-notify-python (0.1.0-2) UNRELEASED; urgency=low
+notify-python (0.1.1-1) unstable; urgency=low
 
   [ Piotr Ozarowski ]
   * Added XS-Vcs-Svn field
@@ -9,8 +9,12 @@ notify-python (0.1.0-2) UNRELEASED; urgency=low
   * Set XS and XB-PV instead of debian/pyversions.
   * Only call dh_pysupport and not dh_python; fixup CDBS rule.
   * Use ${shlibs:Depends} instead of hardcoding the libnotify1 dependency.
+  * New upstream release; closes: #425766.
+    - Bump up libnotify-dev build-dep to >= 0.4.3.
+    - Bump up python-gtk2-dev build-dep and python-gtk2 dep to >= 2.10 for
+      gtk.StatusIcon.
 
- -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:26:36 +0200
+ -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:30:50 +0200
 
 notify-python (0.1.0-1) unstable; urgency=low
 
