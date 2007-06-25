@@ -62,6 +62,15 @@
   )
 )
 
+(define-method attach_to_status_icon
+  (of-object "NotifyNotification")
+  (c-name "notify_notification_attach_to_status_icon")
+  (return-type "none")
+  (parameters
+    '("GtkStatusIcon*" "attach")
+  )
+)
+
 (define-method show
   (of-object "NotifyNotification")
   (c-name "notify_notification_show")

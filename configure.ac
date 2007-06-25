@@ -1,16 +1,16 @@
-AC_INIT(notify-python, 0.1.0, chipx86@chipx86.com)
+AC_INIT(notify-python, 0.1.1, chipx86@chipx86.com)
 AC_PREREQ(2.50)
 AC_CONFIG_SRCDIR(config.h.in)
 AC_COPYRIGHT([Copyright 2006 Christian Hammond])
 
 PACKAGE=notify-python
-VERSION=0.1.0
+VERSION=0.1.1
 
 AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
 AM_CONFIG_HEADER(config.h)
 
 PYGTK_REQUIRED=2.4.0
-LIBNOTIFY_REQUIRED=0.4.0
+LIBNOTIFY_REQUIRED=0.4.3
 
 AC_PROG_CC
 AC_DISABLE_STATIC

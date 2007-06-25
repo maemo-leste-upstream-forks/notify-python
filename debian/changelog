@@ -1,23 +1,24 @@
-notify-python (0.1.0-2.1) unstable; urgency=low
+notify-python (0.1.1-1) unstable; urgency=low
 
-  * Non-maintainer upload with permission from Gustavo Franco.
-  * Build conflicts with libdbus-1-2 to avoid linking on libdbus-1.so.2
-    instead of libdbus-1.so.3 (Closes: #397754).
-  * This upload will fix a bug ('import pynotify' failure) on deluge-torrent
-    package too (Closes: #402256).
+  [ Piotr Ozarowski ]
+  * Added XS-Vcs-Svn field
 
- -- Adam Cécile (Le_Vert) <gandalf@le-vert.net>  Sat,  9 Dec 2006 04:36:54 +0100
+  [ Loic Minier ]
+  * Misc cleanups.
+  * Update URL in copyright.
+  * Set XS and XB-PV instead of debian/pyversions.
+  * Only call dh_pysupport and not dh_python; fixup CDBS rule.
+  * Use ${shlibs:Depends} instead of hardcoding the libnotify1 dependency.
+  * New upstream release; closes: #425766.
+    - Bump up libnotify-dev build-dep to >= 0.4.3.
+    - Bump up python-gtk2-dev build-dep and python-gtk2 dep to >= 2.10 for
+      gtk.StatusIcon.
 
-notify-python (0.1.0-2) unstable; urgency=low
-
-  * Fix debian/pyversions changing content from 2.3 to >= 2.3. 
-    (Closes: #384068)
-
- -- Gustavo Franco <stratus@debian.org>  Tue, 22 Aug 2006 11:47:56 -0300
+ -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:30:50 +0200
 
 notify-python (0.1.0-1) unstable; urgency=low
 
-  * Initial release (Closes: #366863)  
+  * Initial release (Closes: #366863)
 
  -- Gustavo Franco <stratus@debian.org>  Tue,  4 Jul 2006 17:00:55 -0300
 
