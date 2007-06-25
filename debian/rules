@@ -6,7 +6,6 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
 include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
-install/python-notify::
-	dh_python
-	dh_pysupport
+binary-install/python-notify::
+	dh_pysupport -p$(cdbs_curpkg)
 
