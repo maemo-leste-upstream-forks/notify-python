@@ -1,12 +1,17 @@
 notify-python (0.1.0-2) UNRELEASED; urgency=low
 
+  [ Piotr Ozarowski ]
   * Added XS-Vcs-Svn field
 
- -- Piotr Ozarowski <ozarow@gmail.com>  Thu, 23 Nov 2006 14:44:45 +0100
+  [ Loic Minier ]
+  * Misc cleanups.
+  * Update URL in copyright.
+
+ -- Loic Minier <lool@dooz.org>  Mon, 25 Jun 2007 13:19:49 +0200
 
 notify-python (0.1.0-1) unstable; urgency=low
 
-  * Initial release (Closes: #366863)  
+  * Initial release (Closes: #366863)
 
  -- Gustavo Franco <stratus@debian.org>  Tue,  4 Jul 2006 17:00:55 -0300
 
