@@ -1,3 +1,11 @@
+notify-python (0.1.1-2) unstable; urgency=low
+
+  * debian/rules: Remove src/pynotify.c on clean, so that it actually gets
+    regenerated on build. Otherwise some functions like
+    attach_to_status_icon() are missing.
+
+ -- Scott Kitterman <scott@kitterman.com>  Tue, 03 Jul 2007 18:12:50 -0400
+
 notify-python (0.1.1-1) unstable; urgency=low
 
   [ Piotr Ozarowski ]
