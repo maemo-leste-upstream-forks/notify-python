@@ -13,7 +13,8 @@ notify-python (0.1.1-2) unstable; urgency=low
   * Add /svn to the Vcs-Svn URL to allow copy-paste in svn+ssh:// URLs. :-P
   * Sourceful upload causes rebuild for python2.5; closes: #438928.
   * Depends on ${misc:Depends}.
-  * Fix usage of spaces versus tab in rules.
+  * Fix usage of spaces versus tab in rules; the fix for #434714 was in place,
+    but had a syntax error; thanks Martin Pitt; closes: #434714.
 
  -- Loic Minier <lool@dooz.org>  Thu, 06 Dec 2007 15:55:13 +0100
 
