@@ -1,4 +1,9 @@
-notify-python (0.1.1-3) UNRELEASED; urgency=low
+notify-python (0.1.1-2) unstable; urgency=low
+
+  [ Scott Kitterman ]
+  * debian/rules: Remove src/pynotify.c on clean, so that it actually gets
+    regenerated on build. Otherwise some functions like
+    attach_to_status_icon() are missing.
 
   [ Piotr Ożarowski ]
   * Rename XS-Vcs-Svn field to Vcs-Svn
@@ -11,14 +16,6 @@ notify-python (0.1.1-3) UNRELEASED; urgency=low
   * Fix usage of spaces versus tab in rules.
 
  -- Loic Minier <lool@dooz.org>  Thu, 06 Dec 2007 15:55:13 +0100
-
-notify-python (0.1.1-2) unstable; urgency=low
-
-  * debian/rules: Remove src/pynotify.c on clean, so that it actually gets
-    regenerated on build. Otherwise some functions like
-    attach_to_status_icon() are missing.
-
- -- Scott Kitterman <scott@kitterman.com>  Tue, 03 Jul 2007 18:12:50 -0400
 
 notify-python (0.1.1-1) unstable; urgency=low
 
