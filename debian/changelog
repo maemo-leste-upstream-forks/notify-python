@@ -15,6 +15,8 @@ notify-python (0.1.1-2) unstable; urgency=low
   * Depends on ${misc:Depends}.
   * Fix usage of spaces versus tab in rules; the fix for #434714 was in place,
     but had a syntax error; thanks Martin Pitt; closes: #434714.
+  * Ship some testsuite scripts as examples; thanks Sebastien Bacher;
+    closes: #440244.
 
  -- Loic Minier <lool@dooz.org>  Thu, 06 Dec 2007 15:55:13 +0100
 
