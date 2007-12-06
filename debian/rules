@@ -35,13 +35,12 @@ install-%: build-%/build-stamp
 	dh_testroot
 	$(MAKE) -C build-$* install DESTDIR=$(CURDIR)/debian/python-notify
 
-install: build $(PYVERS:%=install-%)
-	dh_install
+install: $(PYVERS:%=install-%)
 
 clean:: reverse-patches
 	dh_testdir
 	dh_testroot
-	rm -Rf build-*
+	rm -rf $(PYVERS:%=build-%)
 	dh_clean src/pynotify.c
 
 binary-indep: install
@@ -53,8 +52,7 @@ binary-arch: install
 	dh_installexamples -s
 	dh_installchangelogs -s ChangeLog
 	dh_strip -s
-	dh_link -s
-	dh_compress -s -X.py -X.glade
+	dh_compress -s
 	dh_fixperms -s
 	dh_pysupport -s
 	dh_installdeb -s
@@ -64,5 +62,4 @@ binary-arch: install
 	dh_builddeb -s
 
 binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install
-.SECONDARY: $(PYVERS:%=build-%/configure-stamp) $(PYVERS:%=build-%/build-stamp)
+.PHONY: build install clean binary-indep binary-arch binary
