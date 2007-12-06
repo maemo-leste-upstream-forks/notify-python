@@ -19,6 +19,7 @@ Package: python-notify
 Architecture: any
 Depends: ${python:Depends},
          ${shlibs:Depends},
+         ${misc:Depends},
          python-gtk2 (>= 2.10)
 Provides: ${python:Provides}
 XB-Python-Version: ${python:Versions}
