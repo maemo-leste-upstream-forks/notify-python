@@ -13,7 +13,7 @@ Build-Depends: debhelper (>= 5.0.37.2),
 Standards-Version: 3.7.2
 XS-Python-Version: >= 2.3
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/notify-python/trunk
-Vcs-Browser: http://svn.debian.org/wsvn/python-modules/packages/notify-python/trunk/?op=log
+Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/notify-python/trunk/
 Homepage: http://www.galago-project.org
 
 Package: python-notify
