@@ -34,6 +34,7 @@ install-%: build-%/build-stamp
 	dh_testdir
 	dh_testroot
 	$(MAKE) -C build-$* install DESTDIR=$(CURDIR)/debian/python-notify
+	rm -f $(CURDIR)/debian/python-notify/usr/lib/python*/*-packages/gtk-2.0/pynotify/*.la
 
 install: $(PYVERS:%=install-%)
 
@@ -54,7 +55,7 @@ binary-arch: install
 	dh_strip -s
 	dh_compress -s
 	dh_fixperms -s
-	dh_pysupport -s
+	dh_python2 -s
 	dh_installdeb -s
 	dh_shlibdeps -s
 	dh_gencontrol -s

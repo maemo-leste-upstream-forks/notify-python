@@ -1,3 +1,29 @@
+notify-python (0.1.1-3) unstable; urgency=low
+
+  * Team upload
+
+  [ Sandro Tosi ]
+  * debian/control
+    - uniforming both Vcs-Svn and Vcs-Browser fields
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Carlos Galisteo ]
+  * debian/control
+    - Added Homepage field.
+
+  [ Sebastien Bacher ]
+  * new_libnotify.patch: updated for the new libnotify api changes;
+    closes: #630292 (thanks to Jérémy Bobbio for finding the patch)
+
+  [ Barry Warasaw ]
+  * Switch to dh_python2 closes: #635452
+
+  [ Scott Kitterman ]
+  * Don't ship .la file (Change from Ubuntu)
+
+ -- Scott Kitterman <scott@kitterman.com>  Tue, 02 Aug 2011 16:20:46 -0400
+
 notify-python (0.1.1-2) unstable; urgency=low
 
   [ Scott Kitterman ]
