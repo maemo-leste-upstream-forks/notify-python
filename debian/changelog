@@ -1,4 +1,6 @@
-notify-python (0.1.1-3) UNRELEASED; urgency=low
+notify-python (0.1.1-3) unstable; urgency=low
+
+  * Team upload
 
   [ Sandro Tosi ]
   * debian/control
@@ -10,7 +12,17 @@ notify-python (0.1.1-3) UNRELEASED; urgency=low
   * debian/control
     - Added Homepage field.
 
- -- Sandro Tosi <matrixhasu@gmail.com>  Thu, 03 Jan 2008 11:48:25 +0100
+  [ Sebastien Bacher ]
+  * new_libnotify.patch: updated for the new libnotify api changes;
+    closes: #630292
+
+  [ Barry Warasaw ]
+  * Switch to dh_python2 closes: #635452
+
+  [ Scott Kitterman ]
+  * Don't ship .la file (Change from Ubuntu)
+
+ -- Scott Kitterman <scott@kitterman.com>  Tue, 02 Aug 2011 16:20:46 -0400
 
 notify-python (0.1.1-2) unstable; urgency=low
 
