@@ -110,7 +110,10 @@ static void
 _notify_action_cb(NotifyNotification *n, const char *action,
 				  ActionCbData *data)
 {
+	PyGILState_STATE state;
 	PyObject *args;
+
+	state = pyg_gil_state_ensure();
 
 	if (data->user_data == Py_None)
 	{
@@ -124,6 +127,7 @@ _notify_action_cb(NotifyNotification *n, const char *action,
 
 	PyEval_CallObject(data->callback, args);
 	Py_DECREF(args);
+	pyg_gil_state_release(state);
 }
 
 static void
@@ -132,7 +136,7 @@ _action_cb_data_destroy(ActionCbData *data)
 	Py_DECREF(data->callback);
 	g_free(data);
 }
-#line 136 "pynotify.c"
+#line 140 "pynotify.c"
 
 
 /* ---------- types from other modules ---------- */
@@ -142,12 +146,14 @@ static PyTypeObject *_PyGdkPixbuf_Type;
 #define PyGdkPixbuf_Type (*_PyGdkPixbuf_Type)
 static PyTypeObject *_PyGtkWidget_Type;
 #define PyGtkWidget_Type (*_PyGtkWidget_Type)
+static PyTypeObject *_PyGtkStatusIcon_Type;
+#define PyGtkStatusIcon_Type (*_PyGtkStatusIcon_Type)
 
 
 /* ---------- forward type declarations ---------- */
 PyTypeObject PyNotifyNotification_Type;
 
-#line 151 "pynotify.c"
+#line 157 "pynotify.c"
 
 
 
@@ -354,7 +360,7 @@ _wrap_notify_notification_clear_hints(PyGObject *self)
     return Py_None;
 }
 
-#line 141 "pynotify.override"
+#line 146 "pynotify.override"
 static PyObject *
 _wrap_notify_notification_add_action(PyGObject *self, PyObject *args,
 									 PyObject *kwargs)
@@ -362,10 +368,13 @@ _wrap_notify_notification_add_action(PyGObject *self, PyObject *args,
     static char *kwlist[] = { "action", "label", "callback",
 	                          "user_data", NULL };
 	ActionCbData *action_cb_data;
+	PyGILState_STATE state;
 	PyObject *callback, *user_data = Py_None;
 	char *action;
 	char *label;
 	size_t len;
+
+	state = pyg_gil_state_ensure();
 
 	len = PyTuple_Size(args);
 
@@ -405,9 +414,10 @@ _wrap_notify_notification_add_action(PyGObject *self, PyObject *args,
 								   (GFreeFunc)_action_cb_data_destroy);
 
 	Py_INCREF(Py_None);
+	pyg_gil_state_release(state);
 	return Py_None;
 }
-#line 411 "pynotify.c"
+#line 421 "pynotify.c"
 
 
 static PyObject *
@@ -431,7 +441,7 @@ _wrap_notify_notification_close(PyGObject *self)
 
 }
 
-#line 233 "pynotify.override"
+#line 242 "pynotify.override"
 static PyObject *
 _wrap_notify_notification_set_hint(PyGObject *self, PyObject *args,
 								   PyObject *kwargs)
@@ -483,7 +493,7 @@ _wrap_notify_notification_set_hint(PyGObject *self, PyObject *args,
 	return Py_None;
 }
 // vim: ft=c
-#line 487 "pynotify.c"
+#line 497 "pynotify.c"
 
 
 static PyMethodDef _PyNotifyNotification_methods[] = {
@@ -600,16 +610,16 @@ _wrap_notify_get_app_name(PyObject *self)
     return Py_None;
 }
 
-#line 195 "pynotify.override"
+#line 204 "pynotify.override"
 static PyObject *
 _wrap_notify_get_server_caps(PyObject *self)
 {
 	return pygalago_wrap_str_list(notify_get_server_caps());
 }
-#line 610 "pynotify.c"
+#line 620 "pynotify.c"
 
 
-#line 202 "pynotify.override"
+#line 211 "pynotify.override"
 static PyObject *
 _wrap_notify_get_server_info(PyObject *self)
 {
@@ -639,7 +649,7 @@ _wrap_notify_get_server_info(PyObject *self)
 
 	return dict;
 }
-#line 643 "pynotify.c"
+#line 653 "pynotify.c"
 
 
 PyMethodDef pypynotify_functions[] = {
@@ -693,6 +703,12 @@ pypynotify_register_classes(PyObject *d)
                 "cannot import name Widget from gtk");
             return;
         }
+        _PyGtkStatusIcon_Type = (PyTypeObject *)PyDict_GetItemString(moddict, "StatusIcon");
+        if (_PyGtkStatusIcon_Type == NULL) {
+            PyErr_SetString(PyExc_ImportError,
+                "cannot import name StatusIcon from gtk");
+            return;
+        }
     } else {
         PyErr_SetString(PyExc_ImportError,
             "could not import gtk");
@@ -714,6 +730,6 @@ pypynotify_register_classes(PyObject *d)
     }
 
 
-#line 718 "pynotify.c"
+#line 734 "pynotify.c"
     pygobject_register_class(d, "NotifyNotification", NOTIFY_TYPE_NOTIFICATION, &PyNotifyNotification_Type, Py_BuildValue("(O)", &PyGObject_Type));
 }

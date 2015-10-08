@@ -1,3 +1,25 @@
+==================== 0.1.1 ====================
+
+Sun Oct 08 14:06:22 EDT 2006  Christian Hammond <chipx86@chipx86.com>
+
+	* configure.ac:
+	  - Bump to version 0.1.1.
+
+Sun Oct 08 13:59:40 EDT 2006  Christian Hammond <chipx86@chipx86.com>
+
+	* src/pynotify.override:
+	* NEWS:
+	  - Patch by Johan Svedberg to fix some problems in thread-based programs.
+
+Tue Sep 05 00:01:04 PDT 2006  Christian Hammond <chipx86@chipx86.com>
+
+	* src/pynotify.defs:
+	* src/pynotify.override:
+	* AUTHORS:
+	* NEWS:
+	  - Patch by lmacken to add support for
+	    Notification.attach_to_status_icon.
+
 ==================== 0.1.0 ====================
 
 Wed Apr 26 01:11:01 PDT 2006  Christian Hammond <chipx86@chipx86.com>

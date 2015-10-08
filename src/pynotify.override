@@ -105,7 +105,10 @@ static void
 _notify_action_cb(NotifyNotification *n, const char *action,
 				  ActionCbData *data)
 {
+	PyGILState_STATE state;
 	PyObject *args;
+
+	state = pyg_gil_state_ensure();
 
 	if (data->user_data == Py_None)
 	{
@@ -119,6 +122,7 @@ _notify_action_cb(NotifyNotification *n, const char *action,
 
 	PyEval_CallObject(data->callback, args);
 	Py_DECREF(args);
+	pyg_gil_state_release(state);
 }
 
 static void
@@ -133,6 +137,7 @@ modulename pynotify
 import gobject.GObject as PyGObject_Type
 import gtk.gdk.Pixbuf as PyGdkPixbuf_Type
 import gtk.Widget as PyGtkWidget_Type
+import gtk.StatusIcon as PyGtkStatusIcon_Type
 %%
 ignore-glob
 	*_get_type
@@ -145,10 +150,13 @@ _wrap_notify_notification_add_action(PyGObject *self, PyObject *args,
     static char *kwlist[] = { "action", "label", "callback",
 	                          "user_data", NULL };
 	ActionCbData *action_cb_data;
+	PyGILState_STATE state;
 	PyObject *callback, *user_data = Py_None;
 	char *action;
 	char *label;
 	size_t len;
+
+	state = pyg_gil_state_ensure();
 
 	len = PyTuple_Size(args);
 
@@ -188,6 +196,7 @@ _wrap_notify_notification_add_action(PyGObject *self, PyObject *args,
 								   (GFreeFunc)_action_cb_data_destroy);
 
 	Py_INCREF(Py_None);
+	pyg_gil_state_release(state);
 	return Py_None;
 }
 %%
