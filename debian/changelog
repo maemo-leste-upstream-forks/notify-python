@@ -1,6 +1,10 @@
 notify-python (0.1.1-4) UNRELEASED; urgency=low
 
+  [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
 
  -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:01:23 +0200
 
