@@ -10,7 +10,6 @@ Build-Depends: debhelper (>= 5.0.37.2),
                libnotify-dev (>= 0.7),
                python-gtk2-dev (>= 2.10)
 Standards-Version: 3.7.2
-X-Python-Version: >= 2.3
 Vcs-Git: https://salsa.debian.org/python-team/modules/notify-python.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/notify-python
 Homepage: http://www.galago-project.org
