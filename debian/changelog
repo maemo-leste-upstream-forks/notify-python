@@ -83,4 +83,3 @@ notify-python (0.1.0-1) unstable; urgency=low
   * Initial release (Closes: #366863)
 
  -- Gustavo Franco <stratus@debian.org>  Tue,  4 Jul 2006 17:00:55 -0300
-

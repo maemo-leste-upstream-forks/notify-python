@@ -28,4 +28,3 @@ Description: Python bindings for libnotify
  information without getting in the user's way.
  .
  python-notify provides just the Python bindings for libnotify.
-
