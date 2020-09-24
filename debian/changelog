@@ -8,6 +8,8 @@ notify-python (0.1.1-4) UNRELEASED; urgency=low
   * d/control: Set Vcs-* to salsa.debian.org
   * d/control: Remove ancient X-Python-Version field
   * Convert git repository from git-dpm to gbp layout
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
 
  -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 16:01:23 +0200
 
