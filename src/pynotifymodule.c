@@ -1,5 +1,6 @@
-#include <pygobject.h>
 #include <pygtk/pygtk.h>
+#include <gtk/gtkwidget.h>
+#include <gtk/gtkstatusicon.h>
 #include <libnotify/notify.h>
 
 void pynotify_register_classes(PyObject *d);
