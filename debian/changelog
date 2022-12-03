@@ -1,3 +1,9 @@
+notify-python (0.1.2-1) unstable; urgency=low
+
+  * New release with compilation fixes, impor for Chimaera
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sat, 03 Dec 2022 11:12:52 +0100
+
 notify-python (0.1.1-4) UNRELEASED; urgency=low
 
   [ Jakub Wilk ]
