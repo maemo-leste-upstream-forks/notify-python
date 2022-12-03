@@ -38,7 +38,6 @@
     '("const-gchar*" "summary")
     '("const-gchar*" "message" (null-ok) (default "NULL"))
     '("const-gchar*" "icon" (null-ok) (default "NULL"))
-    '("GtkWidget*" "attach" (null-ok) (default "NULL"))
   )
 )
 
@@ -50,24 +49,6 @@
     '("const-gchar*" "summary")
     '("const-gchar*" "message" (null-ok) (default "NULL"))
     '("const-gchar*" "icon" (null-ok) (default "NULL"))
-  )
-)
-
-(define-method attach_to_widget
-  (of-object "NotifyNotification")
-  (c-name "notify_notification_attach_to_widget")
-  (return-type "none")
-  (parameters
-    '("GtkWidget*" "attach")
-  )
-)
-
-(define-method attach_to_status_icon
-  (of-object "NotifyNotification")
-  (c-name "notify_notification_attach_to_status_icon")
-  (return-type "none")
-  (parameters
-    '("GtkStatusIcon*" "attach")
   )
 )
 
